@@ -21,11 +21,13 @@ class Tabla():
         
     #Abrimos la hoja de excel
     def cargarTabla(self):
-        self._tabla = pd.read_excel(self._archivo)
+        self._tabla = pd.read_excel(self._archivo, sheet_name= "Hoja1")
         print(self._tabla.head())
     
 
-excel = Tabla("Tabla-transiciones.xlsx")
-excel.cargarTabla()
 
 
+
+if __name__ == "__main__":
+    excel = Tabla("Tabla-transiciones.xlsx")
+    excel.cargarTabla()
